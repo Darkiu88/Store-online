@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load static %}
+
+<div class="container">
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo-text">Atrévete a Brillar</h1>
+      <nav class="navigation">
+        <div class="nav-item">Inicio</div>
+        <div class="nav-group">
+          <div class="nav-item">Productos</div>
+          <div class="nav-item">Contacto</div>
+        </div>
+      </nav>
+      <div class="search-bar">
+        <div class="search-input">
+          <img src="{% static 'images/search-icon.png' %}" alt="" class="search-icon" />
+          <div class="search-text">Buscar</div>
+        </div>
+        <div class="user-actions">
+          <img src="{% static 'images/user-icon.png' %}" alt="" class="user-icon" />
+          <img src="{% static 'images/cart-icon.png' %}" alt="" class="cart-icon" />
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <section class="product-grid">
+    <div class="product-row">
+      <!-- Aquí puedes iterar sobre los productos y generar dinámicamente las tarjetas de producto -->
+      {% for product in products %}
+      <div class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p>Precio: {{ product.price }}</p>
+        <!-- Agrega más información del producto si es necesario -->
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <div class="footer-links">
+          <h2 class="footer-heading">Acerca de nosotros</h2>
+          <a href="#" class="footer-link">Inicio</a>
+          <a href="#" class="footer-link-2">Productos</a>
+          <a href="#" class="footer-link-3">Contactos</a>
+        </div>
+      </div>
+      <div class="footer-column-2">
+        <div class="about-section">
+          <h2 class="about-heading">Sobre nosotros</h2>
+          <p class="about-text">
+            Somos un equipo comprometido cuyo objetivo es proporcionar productos artesanales de moda que generen ingresos. Nos especializamos en accesorios para personas de todas las edades, desde los 7 hasta los 60 años, con el propósito de ayudarles a lucir y sentirse mejor.
+            <br />
+            <br />
+            Nuestros accesorios están diseñados con esmero y ofrecen una opción económica para satisfacer los gustos y necesidades de cada individuo.
+          </p>
+        </div>
+      </div>
+      <div class="footer-column-3">
+        <div class="contact-section">
+          <h2 class="contact-heading">Contacte con nosotros</h2>
+          <a href="#" class="contact-link">Contactenos</a>
+          <a href="mailto:forcadoaccesorios@gmail.com" class="contact-email">forcadoaccesorios@gmail.com</a>
+          <a href="tel:+521234567890" class="contact-phone">+52 (123) 456 78 90</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
